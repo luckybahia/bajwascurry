@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bajwa's Curry & Cocktails | Indian Restaurant Braga</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#0b0b0b;
+color:#f5f5f5;
+}
+
+section{
+padding:100px 10%;
+max-width:1200px;
+margin:auto;
+}
+
+h2{
+text-align:center;
+margin-bottom:40px;
+font-family:'Playfair Display';
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:#000;
+padding:18px 10%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+}
+
+.logo{
+font-family:'Playfair Display';
+font-size:22px;
+color:#c8a96a;
+}
+
+nav ul{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+background:url("images/pic.jpg") center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+position:relative;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+}
+
+.hero h1{
+font-size:60px;
+font-family:'Playfair Display';
+}
+
+.btn{
+background:#c8a96a;
+padding:14px 28px;
+display:inline-block;
+margin:10px;
+border-radius:5px;
+text-decoration:none;
+color:black;
+}
+
+/* AWARD */
+
+.award{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
+
+.award img{
+width:100%;
+border-radius:10px;
+}
+
+/* MENU */
+
+.menu-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.menu-section{
+background:#141414;
+padding:25px;
+border-radius:10px;
+}
+
+.menu-section h3{
+color:#c8a96a;
+margin-bottom:10px;
+}
+
+.menu-section ul{
+list-style:none;
+}
+
+.menu-section li{
+padding:6px 0;
+border-bottom:1px dashed #333;
+}
+
+/* CAROUSEL */
+
+.carousel{
+display:flex;
+gap:20px;
+overflow-x:auto;
+padding:20px;
+}
+
+.carousel img{
+height:260px;
+border-radius:10px;
+}
+
+/* GALLERY */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+}
+
+.gallery img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:10px;
+}
+
+/* RESERVATION */
+
+.reservation{
+text-align:center;
+}
+
+.reservation form{
+max-width:400px;
+margin:auto;
+display:grid;
+gap:12px;
+}
+
+.reservation input{
+padding:10px;
+border:none;
+background:#1b1b1b;
+color:white;
+}
+
+.reservation button{
+background:#c8a96a;
+padding:12px;
+border:none;
+}
+
+/* CONTACT */
+
+.contact{
+text-align:center;
+line-height:1.8;
+}
+
+/* FLOAT BUTTONS */
+
+.reserve-btn{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#c8a96a;
+padding:14px 20px;
+border-radius:50px;
+color:black;
+text-decoration:none;
+font-weight:bold;
+}
+
+.whatsapp-btn{
+position:fixed;
+bottom:25px;
+right:120px;
+background:#25D366;
+padding:14px 20px;
+border-radius:50px;
+color:white;
+text-decoration:none;
+}
+
+/* CHATBOT */
+
+#chatbot{
+position:fixed;
+bottom:25px;
+left:25px;
+background:#111;
+padding:15px;
+border-radius:10px;
+width:250px;
+}
+
+#chatbot input{
+width:100%;
+padding:6px;
+margin-top:6px;
+background:#222;
+border:none;
+color:white;
+}
+
+/* FOOTER */
+
+footer{
+background:#000;
+padding:40px;
+text-align:center;
+margin-top:80px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">Bajwa's Curry & Cocktails</div>
+
+<ul>
+<li><a href="#menu">Menu</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#reservation">Reserve</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Bajwa's Curry & Cocktails</h1>
+
+<p>Authentic Indian Cuisine in Braga</p>
+
+<a href="#menu" class="btn">Explore Menu</a>
+
+<a href="tel:+351934991494" class="btn">Order Online</a>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Award Winning Restaurant</h2>
+
+<div class="award">
+
+<img src="images/award.jpg">
+
+<p>
+Recognised for delivering authentic Indian flavours and hospitality in Braga.
+</p>
+
+</div>
+
+</section>
+
+<section id="menu">
+
+<h2>Our Menu</h2>
+
+<div class="menu-grid">
+
+<div class="menu-section">
+<h3>Vegetarian Starters</h3>
+<ul>
+<li>Papadam</li>
+<li>Aloo Tikki</li>
+<li>Aloo 65</li>
+<li>Vegetable Tikki</li>
+<li>Hara Bhara Kabab</li>
+<li>Vegetable Samosa</li>
+<li>Vegetable Samosa with Chana Chaat</li>
+</ul>
+</div>
+
+<div class="menu-section">
+<h3>Non-Vegetarian Starters</h3>
+<ul>
+<li>Chicken Tikka</li>
+<li>Malai Chicken Tikka</li>
+<li>Chicken 65</li>
+<li>Fish Tikka</li>
+</ul>
+</div>
+
+<div class="menu-section">
+<h3>Vegetarian Main Courses</h3>
+<ul>
+<li>Aloo Gobi</li>
+<li>Baingan Bharta</li>
+<li>Chana Masala</li>
+<li>Vegetable Curry</li>
+<li>Dal Makhani</li>
+<li>Kadhai Paneer</li>
+<li>Matar Paneer</li>
+<li>Paneer Butter Masala</li>
+<li>Shahi Paneer</li>
+</ul>
+</div>
+
+<div class="menu-section">
+<h3>Non-Vegetarian Main Courses</h3>
+<ul>
+<li>Egg Curry</li>
+<li>Boneless Grilled Chicken Curry</li>
+<li>Butter Chicken</li>
+<li>Chicken Tikka Masala</li>
+<li>Kadhai Chicken</li>
+<li>Chicken Butter Masala</li>
+</ul>
+</div>
+
+<div class="menu-section">
+<h3>Rice & Breads</h3>
+<ul>
+<li>Plain Rice</li>
+<li>Cumin Rice</li>
+<li>Vegetable Fried Rice</li>
+<li>Chicken Fried Rice</li>
+<li>Tawa Roti</li>
+<li>Missi Roti</li>
+<li>Plain Naan</li>
+<li>Butter Garlic Naan</li>
+<li>Butter Cheese Garlic Naan</li>
+</ul>
+</div>
+
+<div class="menu-section">
+<h3>Raitas & Salads</h3>
+<ul>
+<li>Plain Dahi</li>
+<li>Boondi Raita</li>
+<li>Cucumber Raita</li>
+<li>Mint Raita</li>
+<li>Tomato Onion Raita</li>
+<li>Green Salad</li>
+</ul>
+</div>
+
+<div class="menu-section">
+<h3>Desserts</h3>
+<ul>
+<li>Chef Special Royal Rabri Fusion Ice Cream</li>
+<li>Mango Ice Cream</li>
+<li>Dessert of the Day</li>
+</ul>
+</div>
+
+<div class="menu-section">
+<h3>Mocktails</h3>
+<ul>
+<li>Lemonade Soda</li>
+<li>Mocktail Mojito</li>
+<li>Grape Apple</li>
+<li>Creamy Lemonade</li>
+<li>Pina Colada Punch</li>
+<li>Dragon Mango</li>
+</ul>
+</div>
+
+<div class="menu-section">
+<h3>Indian Drinks</h3>
+<ul>
+<li>Masala Chai</li>
+<li>Plain Lassi</li>
+<li>Sweet Lassi</li>
+<li>Salted Lassi</li>
+<li>Mango Lassi</li>
+<li>Rose Lassi</li>
+<li>Strawberry Lassi</li>
+<li>Maracuja Lassi</li>
+</ul>
+</div>
+
+<div class="menu-section">
+<h3>Beers</h3>
+<ul>
+<li>Panche</li>
+<li>Heineken</li>
+<li>Sagres</li>
+<li>Super Bock</li>
+<li>Super Bock Preta</li>
+<li>Super Bock with Martini</li>
+<li>Somersby</li>
+</ul>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Chef Specials</h2>
+
+<div class="carousel">
+
+<img src="images/pic1.jpg">
+<img src="images/pic2.jpg">
+<img src="images/pic3.jpg">
+<img src="images/pic4.jpg">
+
+</div>
+
+</section>
+
+<section id="gallery">
+
+<h2>Dining Experience</h2>
+
+<div class="gallery">
+
+<img src="images/pic7.jpg">
+<img src="images/pic8.jpg">
+<img src="images/pic9.jpg">
+<img src="images/pic10.jpg">
+<img src="images/pic11.jpg">
+<img src="images/pic12.jpg">
+
+</div>
+
+</section>
+
+<section id="reservation" class="reservation">
+
+<h2>Reserve a Table</h2>
+
+<form>
+
+<input type="text" placeholder="Your Name">
+
+<input type="date">
+
+<input type="time">
+
+<input type="number" placeholder="Guests">
+
+<button onclick="sendWhatsApp()">Reserve via WhatsApp</button>
+
+</form>
+
+</section>
+
+<section id="contact">
+
+<h2>Visit Us</h2>
+
+<div class="contact">
+
+<p>
+R. Dr. Domingos Soares 26, Braga  
+Phone: 934-991-494
+</p>
+
+<p>
+Opening Hours  
+Tue-Fri: 12:00 – 23:30  
+Sat-Sun: 12:00 – 00:00  
+Monday: Closed
+</p>
+
+</div>
+
+<div style="margin-top:30px">
+
+<iframe
+src="https://maps.google.com/maps?q=41.5559199,-8.4206927&z=17&output=embed"
+width="100%"
+height="400"
+style="border:0;">
+</iframe>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 Bajwa's Curry & Cocktails
+
+</footer>
+
+<a href="#reservation" class="reserve-btn">Reserve</a>
+
+<a href="https://wa.me/351934991494" class="whatsapp-btn">WhatsApp</a>
+
+<div id="chatbot">
+
+<strong>AI Menu Assistant</strong>
+
+<div id="chatlog"></div>
+
+<input id="chatinput" placeholder="Ask about menu...">
+
+</div>
+
+<script>
+
+function sendWhatsApp(){
+
+window.open("https://wa.me/351934991494")
+
+}
+
+const input=document.getElementById("chatinput")
+const log=document.getElementById("chatlog")
+
+input.addEventListener("keypress",function(e){
+
+if(e.key==="Enter"){
+
+let text=input.value.toLowerCase()
+let reply="Please call the restaurant for more info."
+
+if(text.includes("menu")) reply="Our menu includes Butter Chicken, Paneer dishes, Naan breads and more."
+if(text.includes("reservation")) reply="You can reserve a table using the reservation section."
+
+log.innerHTML+="<p><b>You:</b> "+input.value+"</p>"
+log.innerHTML+="<p><b>Assistant:</b> "+reply+"</p>"
+
+input.value=""
+
+}
+
+})
+
+</script>
+
+</body>
+</html>
