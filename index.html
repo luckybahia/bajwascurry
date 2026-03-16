@@ -8,6 +8,29 @@
 
 <title>Bajwa's Curry & Cocktails | Indian Restaurant Braga</title>
 <meta name="description" content="Authentic Indian restaurant in Braga serving rich curries, fresh naan, tandoori dishes and creative cocktails. Bajwa's Curry & Cocktails brings the bold flavors of India to Braga.">
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Restaurant",
+"name": "Bajwa's Curry & Cocktails",
+"image": "https://bajwascurry.com/images/pic.jpg",
+"address": {
+"@type": "PostalAddress",
+"streetAddress": "R. Dr. Domingos Soares 26",
+"addressLocality": "Braga",
+"addressCountry": "Portugal"
+},
+"servesCuisine": "Indian",
+"url": "https://bajwascurry.com",
+"telephone": "+351934991494",
+"priceRange": "€€",
+"openingHours": [
+"Tu-Fr 12:00-23:30",
+"Sa-Su 12:00-00:00"
+]
+}
+</script>
+
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
@@ -302,21 +325,6 @@ margin-top:80px;
 
 </section>
 
-<section>
-
-<h2>Award Winning Restaurant</h2>
-
-<div class="award">
-
-<img src="images/award.jpg">
-
-<p>
-Recognised for delivering authentic Indian flavours and hospitality in Braga.
-</p>
-
-</div>
-
-</section>
 
 <section>
 
@@ -498,6 +506,17 @@ Recognised for delivering authentic Indian flavours and hospitality in Braga.
 </div>
 
 </section>
+<section style="text-align:center">
+
+<h2>Full Menu</h2>
+
+<p>View our complete food and drinks menu.</p>
+
+<a href="menu.pdf" target="_blank" class="btn">
+View Full Menu
+</a>
+
+</section>
 
 <section>
 
@@ -511,6 +530,43 @@ Recognised for delivering authentic Indian flavours and hospitality in Braga.
 <img src="images/pic4.jpg">
 
 </div>
+
+</section>
+
+<section style="text-align:center; padding:80px 20px; background:#111;">
+
+<h2>What Our Guests Say</h2>
+
+<p style="margin-bottom:30px;">
+Rated highly by our guests for authentic Indian flavors and hospitality.
+</p>
+
+<div style="max-width:700px; margin:auto;">
+
+<p style="font-size:18px;">
+⭐ ⭐ ⭐ ⭐ ⭐  
+“Amazing Indian food in Braga! Butter chicken and naan were incredible.”
+</p>
+
+<p style="margin-top:20px; font-size:18px;">
+⭐ ⭐ ⭐ ⭐ ⭐  
+“Great atmosphere and authentic flavors. Highly recommended!”
+</p>
+
+<p style="margin-top:20px; font-size:18px;">
+⭐ ⭐ ⭐ ⭐ ⭐  
+“Best Indian restaurant in Braga. Friendly staff and delicious curries.”
+</p>
+
+</div>
+
+<a href="https://g.page/r/CV-VfBfz_PmtEBM/review"
+target="_blank"
+style="display:inline-block; margin-top:30px; background:#c8a96a; padding:14px 28px; border-radius:6px; text-decoration:none; color:black;">
+
+Read More Reviews on Google
+
+</a>
 
 </section>
 
@@ -630,10 +686,42 @@ input.addEventListener("keypress",function(e){
 if(e.key==="Enter"){
 
 let text=input.value.toLowerCase()
-let reply="Please call the restaurant for more info."
+let reply="Please call the restaurant at +351 934 991 494 for more information."
 
-if(text.includes("menu")) reply="Our menu includes Butter Chicken, Paneer dishes, Naan breads and more."
-if(text.includes("reservation")) reply="You can reserve a table using the reservation section."
+if(text.includes("menu"))
+reply="Our menu includes Butter Chicken, Chicken Tikka Masala, Paneer dishes, Dal Makhani, naan breads and many vegetarian options."
+
+else if(text.includes("vegetarian"))
+reply="Yes! We have many vegetarian dishes like Paneer Butter Masala, Chana Masala, Dal Makhani, Aloo Gobi and more."
+
+else if(text.includes("open") || text.includes("hours"))
+reply="We are open Tuesday to Friday 12:00–23:30 and Saturday–Sunday 12:00–00:00. Monday closed."
+
+else if(text.includes("reservation") || text.includes("table"))
+reply="You can reserve a table using the reservation form or call us at +351 934 991 494."
+
+else if(text.includes("location") || text.includes("address"))
+reply="We are located at R. Dr. Domingos Soares 26, Braga."
+
+else if(text.includes("phone") || text.includes("call"))
+reply="You can call us at +351 934 991 494."
+
+else if(text.includes("amnindery") || text.includes("lucky"))
+reply="rasoi vich."
+
+if(text.includes("recommend") || text.includes("suggest") || text.includes("what should i order"))
+reply="Our most popular dishes are Butter Chicken, Chicken Tikka Masala and Garlic Naan. Many guests also love Paneer Butter Masala."
+
+else if(text.includes("spicy"))
+reply="If you like spicy food, try Chicken Tikka Masala, Kadhai Chicken or Chana Masala."
+
+else if(text.includes("best"))
+reply="Our most loved dishes are Butter Chicken, Chicken Tikka and Garlic Naan."
+
+else if(text.includes("drink") || text.includes("lassi"))
+reply="We serve Mango Lassi, Sweet Lassi and traditional Indian Masala Chai."
+
+
 
 log.innerHTML+="<p><b>You:</b> "+input.value+"</p>"
 log.innerHTML+="<p><b>Assistant:</b> "+reply+"</p>"
