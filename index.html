@@ -288,22 +288,7 @@ width:220px;
 }
 
 }
-#chat-toggle{
-position:fixed;
-bottom:25px;
-left:25px;
-background:#c8a96a;
-color:black;
-width:55px;
-height:55px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:50%;
-font-size:24px;
-cursor:pointer;
-z-index:999;
-}
+
 
 #chat-window{
 position:fixed;
@@ -756,42 +741,70 @@ chat.style.display=chat.style.display==="flex"?"none":"flex"
 
 document.getElementById("chat-toggle").onclick=toggleChat
 
-const input=document.getElementById("chat-input")
-const messages=document.getElementById("chat-messages")
-
-input.addEventListener("keypress",function(e){
-
-if(e.key==="Enter"){
-
-let text=input.value.toLowerCase()
-let reply="Please call the restaurant at +351 934 991 494 for more information."
-
-if(text.includes("menu"))
-reply="Our menu includes Butter Chicken, Chicken Tikka Masala, Paneer dishes, Dal Makhani and fresh naan."
-
-else if(text.includes("vegetarian"))
-reply="Yes! We serve Paneer Butter Masala, Chana Masala, Dal Makhani and other vegetarian dishes."
-
-else if(text.includes("open") || text.includes("hours"))
-reply="We are open Tuesday–Friday 12:00–23:30 and Saturday–Sunday 12:00–00:00. Monday closed."
-
-else if(text.includes("reservation"))
-reply="You can reserve a table using the reservation form or call +351 934 991 494."
-
-else if(text.includes("address") || text.includes("location"))
-reply="We are located at R. Dr. Domingos Soares 26, Braga."
-
-else if(text.includes("recommend") || text.includes("suggest"))
-reply="Our most popular dishes are Butter Chicken, Chicken Tikka Masala and Garlic Naan."
-
-messages.innerHTML+="<p><b>You:</b> "+input.value+"</p>"
-messages.innerHTML+="<p><b>Assistant:</b> "+reply+"</p>"
-
-input.value=""
-
+function sendWhatsApp(){
+window.open("https://wa.me/351934991494")
 }
 
-})
+function toggleChat(){
+const chat=document.getElementById("chat-window")
+
+if(chat.style.display==="flex"){
+chat.style.display="none"
+}else{
+chat.style.display="flex"
+}
+}
+
+document.getElementById("chat-toggle").onclick=toggleChat
+
+const messages = document.getElementById("chat-messages")
+
+function addMessage(sender,text){
+messages.innerHTML += "<p><b>"+sender+":</b> "+text+"</p>"
+messages.scrollTop = messages.scrollHeight
+}
+
+function showOptions(){
+messages.innerHTML += `
+<div style="margin-top:10px">
+<button onclick="menu(); return false;">View Menu</button>
+<button onclick="recommend(); return false;">Recommend Dish</button>
+<button onclick="veg(); return false;">Vegetarian Options</button>
+<button onclick="hours(); return false;">Opening Hours</button>
+<button onclick="locationInfo(); return false;">Location</button>
+<button onclick="reserve(); return false;">Reserve Table</button>
+</div>
+`
+}
+
+function menu(){
+addMessage("Assistant","Our menu includes Butter Chicken, Chicken Tikka Masala, Paneer dishes, Dal Makhani and fresh naan.")
+}
+
+function recommend(){
+addMessage("Assistant","Our most popular dishes are Butter Chicken, Chicken Tikka Masala and Garlic Naan.")
+}
+
+function veg(){
+addMessage("Assistant","Vegetarian options include Paneer Butter Masala, Chana Masala, Dal Makhani and Aloo Gobi.")
+}
+
+function hours(){
+addMessage("Assistant","We are open Tue–Fri 12:00–23:30 and Sat–Sun 12:00–00:00. Monday closed.")
+}
+
+function locationInfo(){
+addMessage("Assistant","You can find us at R. Dr. Domingos Soares 26, Braga.")
+}
+
+function reserve(){
+addMessage("Assistant","You can reserve a table using the reservation form or call +351 934 991 494.")
+}
+
+addMessage("Assistant","Hello! Welcome to Bajwa's Curry & Cocktails 👋")
+addMessage("Assistant","How can I help you today?")
+
+showOptions()
 
 </script>
 <div id="chat-toggle">💬</div>
