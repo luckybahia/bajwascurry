@@ -728,6 +728,10 @@ Get Directions on Google Maps
 
 <script>
 
+<script>
+
+window.onload = function(){
+
 function sendWhatsApp(){
 window.open("https://wa.me/351934991494")
 }
@@ -742,7 +746,7 @@ chat.style.display="flex"
 }
 }
 
-document.getElementById("chat-toggle").onclick=toggleChat
+document.getElementById("chat-toggle").onclick = toggleChat
 
 const messages = document.getElementById("chat-messages")
 
@@ -764,27 +768,27 @@ messages.innerHTML += `
 `
 }
 
-function menu(){
+window.menu = function(){
 addMessage("Assistant","Our menu includes Butter Chicken, Chicken Tikka Masala, Paneer dishes, Dal Makhani and fresh naan.")
 }
 
-function recommend(){
+window.recommend = function(){
 addMessage("Assistant","Our most popular dishes are Butter Chicken, Chicken Tikka Masala and Garlic Naan.")
 }
 
-function veg(){
+window.veg = function(){
 addMessage("Assistant","Vegetarian options include Paneer Butter Masala, Chana Masala, Dal Makhani and Aloo Gobi.")
 }
 
-function hours(){
+window.hours = function(){
 addMessage("Assistant","We are open Tue–Fri 12:00–23:30 and Sat–Sun 12:00–00:00. Monday closed.")
 }
 
-function locationInfo(){
+window.locationInfo = function(){
 addMessage("Assistant","You can find us at R. Dr. Domingos Soares 26, Braga.")
 }
 
-function reserve(){
+window.reserve = function(){
 addMessage("Assistant","You can reserve a table using the reservation form or call +351 934 991 494.")
 }
 
@@ -792,6 +796,9 @@ addMessage("Assistant","Hello! Welcome to Bajwa's Curry & Cocktails 👋")
 addMessage("Assistant","How can I help you today?")
 
 showOptions()
+
+}
+
 </script>
 <div id="chat-toggle">💬</div>
 
